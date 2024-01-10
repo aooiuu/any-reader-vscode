@@ -1,9 +1,25 @@
 # Change Log
 
-All notable changes to the "z-rss" extension will be documented in this file.
+## [1.4.0]
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- 列表添加上一页、下一页按钮
 
-## [Unreleased]
+## [1.3.0]
 
-- Initial release
+- 列表添加已读刷新按钮
+
+## [1.2.0]
+
+- 自定义阅读页标题
+
+## [1.1.0]
+
+- 文章搜索
+- 阅读页面自定义 html 注入
+- 自定义读取规则 (view_mode: all_articles, unread, adaptive, marked, updated)
+
+## [1.0.0]
+
+- 阅读状态标记 (根据文章、分类、列表一键标记)
+- 分类、特殊分类、多级分类展示
+- 无图模式
