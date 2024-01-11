@@ -32,3 +32,7 @@
   </a>
 </p>
 
+
+## 预览
+
+![1](https://github.com/aooiuu/any-reader-vscode/assets/28108111/fff2e255-5e09-4bff-b45c-78070dce8afc)
