@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@any-reader/core@0.0.1-alpha.2":
-  version "0.0.1-alpha.2"
-  resolved "https://registry.npmjs.org/@any-reader/core/-/core-0.0.1-alpha.2.tgz#7ea0e5473b81b9787fc2616cfb7765032643bff2"
-  integrity sha512-US3zbNhVONe9Jm/Wb2UPYMmToUR0VFbHqkBLWjcM02ypVXgx8CLiAbie0C/EDo3U/9S5jpYDaTFGZwMX7J/Z6g==
+"@any-reader/core@0.0.1-alpha.4":
+  version "0.0.1-alpha.4"
+  resolved "https://registry.npmjs.org/@any-reader/core/-/core-0.0.1-alpha.4.tgz#4798a8c3e283ad15da6ed4e600f27891f30f9eee"
+  integrity sha512-Jeiii2QTNpn8R9OPefp9iwmRuJ1hF4Qjqi+ZSzER+mUd7ZDVOmK7JrQhq3DC9a8XAT+OQvu+L6+2vPhtVDU5dw==
   dependencies:
     axios "^1.5.1"
     base64-js "^1.5.1"
@@ -13,6 +13,7 @@
     compressing "^1.9.0"
     jsonpath-plus "^7.2.0"
     pako "^2.1.0"
+    urlencode "^2.0.0"
 
 "@discoveryjs/json-ext@^0.5.0":
   version "0.5.7"
@@ -1390,6 +1391,13 @@ iconv-lite@^0.5.0:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
+iconv-lite@~0.6.3:
+  version "0.6.3"
+  resolved "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.6.3.tgz#a52f80bf38da1952eb5c681790719871a1a72501"
+  integrity sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==
+  dependencies:
+    safer-buffer ">= 2.1.2 < 3.0.0"
+
 ignore@^5.2.0:
   version "5.2.0"
   resolved "https://registry.npmmirror.com/ignore/-/ignore-5.2.0.tgz#6d3bac8fa7fe0d45d9f9be7bac2fc279577e345a"
@@ -2027,7 +2035,7 @@ safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   resolved "https://registry.npmmirror.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
   integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
 
-"safer-buffer@>= 2.1.2 < 3":
+"safer-buffer@>= 2.1.2 < 3", "safer-buffer@>= 2.1.2 < 3.0.0":
   version "2.1.2"
   resolved "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
@@ -2284,6 +2292,13 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+urlencode@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/urlencode/-/urlencode-2.0.0.tgz#dd0c884d5cfb08adc76607ca3b9431165468695f"
+  integrity sha512-K4+koEq4II9FqKKdLyMwfVFiWvTLJsdsIihXCprumjlOwpviO44E4hAhLYBLb6CEVTZh9hXXMTQHIT+Hwv5BPw==
+  dependencies:
+    iconv-lite "~0.6.3"
 
 util-deprecate@~1.0.1:
   version "1.0.2"

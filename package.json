@@ -3,7 +3,7 @@
   "displayName": "any-reader",
   "description": "any-reader for vscode",
   "icon": "resources/icon.png",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "publisher": "aooiu",
   "qna": "https://github.com/aooiuu/any-reader-vscode/issues",
@@ -47,12 +47,18 @@
       {
         "command": "any-reader.editBookSource",
         "title": "书源编辑",
-        "category": "any-reader",
-        "icon": "$(settings-edit)"
+        "icon": "$(settings-edit)",
+        "category": "any-reader"
+      },
+      {
+        "command": "any-reader.getBookSource",
+        "title": "刷新书源",
+        "icon": "$(refresh)",
+        "category": "any-reader"
       },
       {
         "command": "any-reader.searchBook",
-        "title": "书源搜索",
+        "title": "搜索",
         "icon": "$(search)",
         "category": "any-reader"
       }
@@ -71,6 +77,10 @@
         {
           "id": "any-reader-book",
           "name": "Book"
+        },
+        {
+          "id": "any-reader-source",
+          "name": "Source"
         }
       ]
     },
@@ -78,13 +88,23 @@
       "view/title": [
         {
           "command": "any-reader.searchBook",
-          "when": "view == any-reader-book",
           "group": "navigation"
         },
         {
           "command": "any-reader.editBookSource",
-          "when": "view == any-reader-book",
           "group": "navigation"
+        },
+        {
+          "command": "any-reader.getBookSource",
+          "when": "view == any-reader-source",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "any-reader.searchBook",
+          "when": "view == any-reader-source",
+          "group": "inline"
         }
       ]
     }
@@ -110,7 +130,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "@any-reader/core": "0.0.1-alpha.2",
+    "@any-reader/core": "0.0.1-alpha.4",
     "fs-extra": "^11.1.1"
   }
 }

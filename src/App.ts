@@ -1,12 +1,17 @@
 import * as vscode from 'vscode';
-import { bookProvider } from './explorer/book';
-import bookManager, { TreeNode } from './explorer/bookManager';
+import { Rule } from '@any-reader/core';
 import { COMMANDS } from './constants';
-import { BOOK_SOURCE_PATH, ensureFile } from './dataManager';
 import { config } from './config';
+import { BookProvider } from './explorer/book';
+import { SourceProvider } from './explorer/source';
+import bookManager, { TreeNode } from './explorer/bookManager';
+import sourceManager from './explorer/sourceManager';
+import { BOOK_SOURCE_PATH, ensureFile } from './dataManager';
 
 class App {
-  private bookProvider: bookProvider = new bookProvider();
+  private bookProvider: BookProvider = new BookProvider();
+  private sourceProvider: SourceProvider = new SourceProvider();
+
   private context?: vscode.ExtensionContext;
   private webviewPanel?: vscode.WebviewPanel;
 
@@ -18,9 +23,12 @@ class App {
     [
       registerCommand(COMMANDS.editBookSource, this.editBookSource, this),
       registerCommand(COMMANDS.searchBook, this.searchBook, this),
-      registerCommand(COMMANDS.getContent, this.getContent, this)
+      registerCommand(COMMANDS.getContent, this.getContent, this),
+      registerCommand(COMMANDS.getBookSource, this.getBookSource, this)
     ].forEach((command) => context.subscriptions.push(command));
     registerTreeDataProvider('any-reader-book', this.bookProvider);
+    registerTreeDataProvider('any-reader-source', this.sourceProvider);
+    vscode.commands.executeCommand(COMMANDS.getBookSource);
   }
 
   // 书源编辑
@@ -31,8 +39,8 @@ class App {
   }
 
   // 搜索
-  async searchBook() {
-    await bookManager.searchBook();
+  async searchBook(rule?: Rule) {
+    await bookManager.searchBook(rule);
     this.bookProvider.refresh();
   }
 
@@ -80,6 +88,12 @@ class App {
     }
     this.webviewPanel.webview.html = content;
     this.webviewPanel.reveal();
+  }
+
+  // 获取本地书源列表
+  public async getBookSource() {
+    sourceManager.getBookSource();
+    this.sourceProvider.refresh();
   }
 }
 

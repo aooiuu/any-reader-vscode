@@ -9,13 +9,13 @@ export interface TreeNode {
 }
 
 class BookManager implements vscode.Disposable {
-  public list: TreeNode[] = [];
+  private list: TreeNode[] = [];
 
-  public dispose(): void {
+  dispose(): void {
     this.list = [];
   }
 
-  public async searchBook() {
+  async searchBook(rule?: Rule) {
     const keyword = await vscode.window.showInputBox({
       prompt: '书源搜索',
       value: ''
@@ -24,29 +24,31 @@ class BookManager implements vscode.Disposable {
       return;
     }
 
-    // 读取书源配置
-    const bookSource = await getBookSource();
-    if (bookSource.length === 0) {
-      return;
+    if (!rule) {
+      const bs = await getBookSource();
+      if (bs.length === 0) {
+        return;
+      }
+
+      rule = bs[0];
     }
 
-    const bs = bookSource[0];
-    const rm = new RuleManager(bs);
+    const rm = new RuleManager(rule);
     const list = await rm.search(keyword);
-    this.list = list.map((searchItem: any) => {
+    this.list = list.map((searchItem: unknown) => {
       return {
-        rule: bs,
+        rule,
         type: 1,
         data: searchItem
-      };
+      } as TreeNode;
     });
   }
 
-  public getChildren(): Promise<TreeNode[]> {
+  getChildren(): Promise<TreeNode[]> {
     return Promise.resolve(this.list);
   }
 
-  public async getChapter(tn: TreeNode): Promise<TreeNode[]> {
+  async getChapter(tn: TreeNode): Promise<TreeNode[]> {
     const rm = new RuleManager(tn.rule);
     const list = await rm.getChapter(tn.data.url);
     return Promise.resolve(
@@ -58,7 +60,7 @@ class BookManager implements vscode.Disposable {
     );
   }
 
-  public async getContent(tn: TreeNode): Promise<string> {
+  async getContent(tn: TreeNode): Promise<string> {
     const rm = new RuleManager(tn.rule);
     return rm.getContent(tn.data.url);
   }

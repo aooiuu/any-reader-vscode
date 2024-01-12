@@ -2,8 +2,8 @@ import * as vscode from 'vscode';
 import { COMMANDS } from '../constants';
 import bookManager, { TreeNode } from './bookManager';
 
-export class bookProvider implements vscode.TreeDataProvider<TreeNode> {
-  private _onDidChangeTreeData = new vscode.EventEmitter<TreeNode | undefined>();
+export class BookProvider implements vscode.TreeDataProvider<TreeNode> {
+  readonly _onDidChangeTreeData = new vscode.EventEmitter<TreeNode | undefined>();
   readonly onDidChangeTreeData = this._onDidChangeTreeData.event;
 
   refresh(): void {
