@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@any-reader/core@0.0.1-alpha.4":
-  version "0.0.1-alpha.4"
-  resolved "https://registry.npmjs.org/@any-reader/core/-/core-0.0.1-alpha.4.tgz#4798a8c3e283ad15da6ed4e600f27891f30f9eee"
-  integrity sha512-Jeiii2QTNpn8R9OPefp9iwmRuJ1hF4Qjqi+ZSzER+mUd7ZDVOmK7JrQhq3DC9a8XAT+OQvu+L6+2vPhtVDU5dw==
+"@any-reader/core@0.0.1-alpha.5":
+  version "0.0.1-alpha.5"
+  resolved "https://registry.npmjs.org/@any-reader/core/-/core-0.0.1-alpha.5.tgz#639e0359b558fe4393b14b36d439a62ff5c80304"
+  integrity sha512-13bu2tR+Y33+l+iZK5TJJzw2q2PQMl37fp7OodIxQgcVVUU/EY0Ps/6zCzdWF5TpwyUHR9Dp2RmRyGfd8IFTrg==
   dependencies:
     axios "^1.5.1"
     base64-js "^1.5.1"
@@ -14,6 +14,8 @@
     jsonpath-plus "^7.2.0"
     pako "^2.1.0"
     urlencode "^2.0.0"
+    xmldom "^0.6.0"
+    xpath.js "^1.1.0"
 
 "@discoveryjs/json-ext@^0.5.0":
   version "0.5.7"
@@ -2414,6 +2416,16 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.npmmirror.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==
+
+xmldom@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.npmmirror.com/xmldom/-/xmldom-0.6.0.tgz#43a96ecb8beece991cef382c08397d82d4d0c46f"
+  integrity sha512-iAcin401y58LckRZ0TkI4k0VSM1Qg0KGSc3i8rU+xrxe19A/BN1zHyVSJY7uoutVlaTSzYyk/v5AmkewAP7jtg==
+
+xpath.js@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmmirror.com/xpath.js/-/xpath.js-1.1.0.tgz#3816a44ed4bb352091083d002a383dd5104a5ff1"
+  integrity sha512-jg+qkfS4K8E7965sqaUl8mRngXiKb3WZGfONgE18pr03FUQiuSV6G+Ej4tS55B+rIQSFEIw3phdVAQ4pPqNWfQ==
 
 xtend@^4.0.0:
   version "4.0.2"
