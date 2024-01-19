@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { getBookSource } from '../dataManager';
-import { RuleManager, Rule, SearchItem, ChapterItem } from '@any-reader/core';
+import { RuleManager, Rule, SearchItem, ChapterItem, ContentType } from '@any-reader/core';
 
 export interface TreeNode {
   rule: Rule;
@@ -62,7 +62,11 @@ class BookManager implements vscode.Disposable {
 
   async getContent(tn: TreeNode): Promise<string> {
     const rm = new RuleManager(tn.rule);
-    return rm.getContent(tn.data.url);
+    const content = await rm.getContent(tn.data.url);
+    if (tn.rule.contentType === ContentType.MANGA) {
+      return content.map((src) => `<img src="${src}"/>`).join('');
+    }
+    return content.join('');
   }
 }
 

@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@any-reader/core@0.0.1-alpha.6":
-  version "0.0.1-alpha.6"
-  resolved "https://registry.npmjs.org/@any-reader/core/-/core-0.0.1-alpha.6.tgz#2dba1a5172c1511e751b026c2d23b2654f156e4f"
-  integrity sha512-SsmZeCnKT8vg+UccsT/bdldHfJFVwaLeQZ0RGvyw2rq1X8rJFh6SBeSf+TpwZQ8i2z5vAsfhQQeXiVbe6HOdsQ==
+"@any-reader/core@0.1.0-alpha.1":
+  version "0.1.0-alpha.1"
+  resolved "https://registry.npmjs.org/@any-reader/core/-/core-0.1.0-alpha.1.tgz#1bd6c43f74584b61117b8ecb3ec2da2afd3cabc2"
+  integrity sha512-h/kBLW0xEEL1ad4jTaDep/rclmowgNwDFKsum4o640poiMxzuYehTRx67Ez/tMicQ3RVPctLxnZ6mKx6SalBJg==
   dependencies:
     axios "^1.5.1"
     base64-js "^1.5.1"
