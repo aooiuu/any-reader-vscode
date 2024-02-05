@@ -10,7 +10,8 @@ class SourceManager implements vscode.Disposable {
   }
 
   async getBookSource() {
-    this.bookSource = await getBookSource();
+    const rules = await getBookSource();
+    this.bookSource = rules.filter((e) => e.enableSearch);
   }
 
   async getChildren(): Promise<Rule[]> {
