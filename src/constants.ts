@@ -4,5 +4,6 @@ export enum COMMANDS {
   getContent = 'any-reader.getContent',
 
   // 读取所有书源
-  getBookSource = 'any-reader.getBookSource'
+  getBookSource = 'any-reader.getBookSource',
+  home = 'any-reader.home'
 }

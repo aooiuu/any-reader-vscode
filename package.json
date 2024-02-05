@@ -3,8 +3,9 @@
   "displayName": "any-reader",
   "description": "any-reader for vscode",
   "icon": "resources/icon.png",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
+  "preview": true,
   "publisher": "aooiu",
   "qna": "https://github.com/aooiuu/any-reader-vscode/issues",
   "bugs": {
@@ -18,7 +19,8 @@
   "keywords": [
     "阅读",
     "书源",
-    "摸鱼"
+    "摸鱼",
+    "eso"
   ],
   "engines": {
     "vscode": "^1.68.0"
@@ -61,6 +63,12 @@
         "title": "搜索",
         "icon": "$(search)",
         "category": "any-reader"
+      },
+      {
+        "command": "any-reader.home",
+        "title": "Home",
+        "icon": "$(home)",
+        "category": "any-reader"
       }
     ],
     "viewsContainers": {
@@ -99,6 +107,11 @@
         {
           "command": "any-reader.getBookSource",
           "when": "view == any-reader-source",
+          "group": "navigation"
+        },
+        {
+          "command": "any-reader.home",
+          "when": "view == any-reader-book",
           "group": "navigation"
         }
       ],
