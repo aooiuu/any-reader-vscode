@@ -1,5 +1,10 @@
 # any-reader-vscode
 
+
+代码已迁移到[any-reader](https://github.com/aooiuu/any-reader)
+
+---
+
 > 一个可以自定义书源的看书插件, 书源解析基于[any-reader](https://github.com/aooiuu/any-reader)
 
 点个 `star` 可以关注插件更新动态, 也欢迎大家提交 `PR`.
